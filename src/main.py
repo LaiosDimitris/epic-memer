@@ -14,8 +14,7 @@ async def on_ready():
 def getChannels():
     return [channel for guild in client.guilds 
                         for channel in guild.channels 
-                            if channel.name == '😂memes']
-                            
+                            if channel.name == '😂memes']                    
 async def sendTweets():
     while True:
         tweetsToSend = await tweetGetter.getTweets()
