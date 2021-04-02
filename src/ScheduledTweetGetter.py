@@ -22,6 +22,8 @@ class ScheduledTweetGetter:
         for i, account in enumerate(accounts):
             currentLastTweet = self.__getLatestTweet(account['username'])
             if account['lastTweet'] != currentLastTweet:
+                if currentLastTweet == None:
+                    continue
                 if not self.__tweetIsValid(currentLastTweet):
                     continue
                 print(f'New tweet from {account["username"]}\n{currentLastTweet}')
